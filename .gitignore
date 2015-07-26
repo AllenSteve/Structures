@@ -1,13 +1,5 @@
 # git ignore file
-.log
 .sdf
 .opensdf
-.ilk
-.exe
-.pdb
-.tlog
-.idb
-.obj
 .xml
-.lastbuildstate
 Debug/
