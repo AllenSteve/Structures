@@ -2,8 +2,11 @@
 .log
 .sdf
 .suo
-.GhostDoc.xml
 .opensdf
 .ilk
 .exe
 .pdb
+.tlog
+.idb
+.obj
+.xml
