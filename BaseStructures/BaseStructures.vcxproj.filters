@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Library">
+      <UniqueIdentifier>{b0221a4e-535b-4948-97a3-fe9c5133870e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest">
+      <UniqueIdentifier>{63b6467b-8fc1-4700-b4ef-c46a4cd9c0b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest\UT.Common">
+      <UniqueIdentifier>{97d35772-bdc8-4898-9d2b-5b617c39fe5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Structure">
+      <UniqueIdentifier>{87708b76-123e-4146-9374-c0e674e373c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Structure\Header">
+      <UniqueIdentifier>{5864d132-336a-486d-8895-eaef01f01810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Structure\Source">
+      <UniqueIdentifier>{1fa370c7-374f-4d42-af23-5a0f6d73e95c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HelloWorld.h">
+      <Filter>Structure\Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HelloWorld.cpp">
+      <Filter>Structure\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>UnitTest\UT.Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
