@@ -24,6 +24,9 @@
     <ClInclude Include="HelloWorld.h">
       <Filter>Structure\Header</Filter>
     </ClInclude>
+    <ClInclude Include="LinearList.h">
+      <Filter>Structure\Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HelloWorld.cpp">
