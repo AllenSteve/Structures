@@ -1,4 +1,5 @@
 #include<iostream>
+#include "Exceptions.h"
 using namespace std;
 
 template<class T>
@@ -92,19 +93,27 @@ int LinearList<T>::Search(const T& obj) const
 template<class T>
 LinearList<T> LinearList<T>::Delete(int index, const T& obj) const
 {
-	assert(index >= 0 && index < this->length);
-	obj = this->elements[index];
-	for (int i = index, n = --this->length; i < n; ++i)
-		this->elements[i] = this->elements[i + 1];
-	return *this;
+	if (this->Find(index, obj))
+	{
+		for (int i = index, n = --this->length; i < n; ++i)
+			this->elements[i] = this->elements[i + 1];
+		return *this;
+	}
+	else throw OutOfBounds();
 }
 
 template<class T>
 LinearList<T> LinearList<T>::Insert(int index, const T& obj) const
 {
-	assert(index >= 0 && index < this->length);
+	assert(index >= 0 && index <= this->length);
 	this->elements[index] = obj;
-	for (int i = index, n = ++this->length; i < n; ++i)
-		this->elements[i + 1] = this->elements[i];
-	return *this;
+	if (index >= 0 && index < this->length)
+	{
+		for (int i = index, n = ++this->length; i < n; ++i)
+			this->elements[i + 1] = this->elements[i];
+		return *this;
+	}
+	else if (index < 0 || index>length)
+		throw OutOfBounds();
+	else throw NoMem();
 }

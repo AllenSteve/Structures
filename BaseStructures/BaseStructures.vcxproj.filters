@@ -27,6 +27,9 @@
     <ClInclude Include="LinearList.h">
       <Filter>Structure\Header</Filter>
     </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Library</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HelloWorld.cpp">

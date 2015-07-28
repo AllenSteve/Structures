@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Exceptions.h" />
     <ClInclude Include="HelloWorld.h" />
     <ClInclude Include="LinearList.h" />
   </ItemGroup>
