@@ -7,7 +7,11 @@ class LinearList
 private:
 	// 0个或多个元素的有序集合
 	T *elements;
+
+	// 线性表中的元素个数
 	int length;
+
+	// 线性表的容量
 	int size;
 
 public:
@@ -17,26 +21,23 @@ public:
 	// 析构函数,删除表
 	~LinearList();
 
-	// 如果表为空则返回t r u e，否则返回false
+	// 如果表为空则返回true,否则返回false
 	bool IsEmpty() const;
 
 	// 返回表的大小 (即表中元素个数)
 	int Length() const;
 
-	// 寻找表中第k 个元素，并把它保存到x 中；如果不存在，则返回false
-	bool Find(int k, T& x) const; 
+	// 寻找表中第index 个元素，并把它保存到obj中；如果不存在，则返回false
+	bool Find(int index, T& obj) const; 
 
-	// 返回元素x在表中的位置；如果x 不在表中，则返回0
-	int Search(const T& x) const; 
+	// 返回元素obj在表中的位置；如果obj 不在表中，则返回0
+	int Search(const T& obj) const;
 
-	// 删除表中第k 个元素，并把它保存到x 中；函数返回修改后的线性表
-	LinearList<T> Delete(int k, const T& x);
+	// 删除表中第index 个元素，并把它保存到obj 中；函数返回修改后的线性表
+	LinearList<T> Delete(int index, const T& obj);
 
-	// 在第k个元素之后插入x；函数返回修改后的线性表
-	LinearList<T> Insert(int k, const T& x);
-
-
-
+	// 在第k个元素之后插入obj；函数返回修改后的线性表
+	LinearList<T> Insert(int index, const T& obj);
 };
 
 template<class T>
@@ -92,12 +93,18 @@ template<class T>
 LinearList<T> LinearList<T>::Delete(int index, const T& obj) const
 {
 	assert(index >= 0 && index < this->length);
-
+	obj = this->elements[index];
+	for (int i = index, n = --this->length; i < n; ++i)
+		this->elements[i] = this->elements[i + 1];
+	return *this;
 }
 
 template<class T>
 LinearList<T> LinearList<T>::Insert(int index, const T& obj) const
 {
 	assert(index >= 0 && index < this->length);
-
+	this->elements[index] = obj;
+	for (int i = index, n = ++this->length++; i < n; ++i)
+		this->elements[i + 1] = this->elements[i];
+	return *this;
 }
