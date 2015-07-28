@@ -107,9 +107,9 @@ LinearList<T> LinearList<T>::Insert(int index, const T& obj) const
 {
 	if (index >= 0 && index < this->length)
 	{
-		this->elements[index] = obj;
 		for (int i = index, n = ++this->length; i < n; ++i)
 			this->elements[i + 1] = this->elements[i];
+		this->elements[index] = obj;
 		return *this;
 	}
 	else if (index < 0 || index>length)
