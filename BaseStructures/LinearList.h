@@ -105,10 +105,9 @@ LinearList<T> LinearList<T>::Delete(int index, const T& obj) const
 template<class T>
 LinearList<T> LinearList<T>::Insert(int index, const T& obj) const
 {
-	assert(index >= 0 && index <= this->length);
-	this->elements[index] = obj;
 	if (index >= 0 && index < this->length)
 	{
+		this->elements[index] = obj;
 		for (int i = index, n = ++this->length; i < n; ++i)
 			this->elements[i + 1] = this->elements[i];
 		return *this;
