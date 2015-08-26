@@ -2,7 +2,7 @@
 
 void Hello::Say()
 {
-	cout <<"Hello World!!!"<< endl;
+	cout <<"Hello World!"<< endl;
 }
 
 string Hello::Name()
